@@ -95,7 +95,17 @@ public class PlayerController : MonoBehaviour {
         }
         
     }
+    void OnCollisionStay2D(Collision2D collision)
+    {
 
+        if (collision.gameObject.tag == "Ground")
+        {
+            transform.parent = collision.transform;
+
+        }
+    }
+
+    
     void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.collider.gameObject.CompareTag("Threat"))
@@ -112,6 +122,14 @@ public class PlayerController : MonoBehaviour {
         {
             Destroy(collision.gameObject);
             haveKey = true;
+        }
+    }
+
+    void OnCollisionExit2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Ground")
+        {
+            transform.parent = null;
         }
     }
 }

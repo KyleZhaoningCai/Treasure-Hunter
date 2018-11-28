@@ -14,10 +14,8 @@ public class OpenGate : MonoBehaviour {
             {
                 collision.gameObject.GetComponent<PlayerController>().haveKey = false;
                 Transform currentTransform = this.gameObject.transform.parent.transform;
-                Destroy(this.gameObject.transform.parent.gameObject);
                 Instantiate(openedGate, currentTransform.position, currentTransform.rotation);
-                
-
+                Destroy(this.gameObject.transform.parent.gameObject);         
             }
         }
     }

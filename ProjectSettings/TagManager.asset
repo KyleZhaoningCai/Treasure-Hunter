@@ -10,6 +10,8 @@ TagManager:
   - Bullet
   - Key
   - Destroyable
+  - Trigger
+  - platform
   layers:
   - Default
   - TransparentFX

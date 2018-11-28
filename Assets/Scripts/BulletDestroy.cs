@@ -18,14 +18,14 @@ public class BulletDestroy : MonoBehaviour {
     }
     void OnTriggerEnter2D(Collider2D collision)
     {
-        if (!collision.gameObject.CompareTag("Player"))
+        if (!collision.gameObject.CompareTag("Player") && !collision.gameObject.CompareTag("Trigger"))
         {
             Destroy(this.gameObject);
         }
         if (collision.gameObject.CompareTag("Chest"))
         {
             GameObject keyClone = Instantiate(key, collision.gameObject.transform.GetChild(0).position, transform.rotation);
-            keyClone.GetComponent<Rigidbody2D>().AddForce(new Vector2(200f, 600f));
+            keyClone.GetComponent<Rigidbody2D>().AddForce(new Vector2(0, 600f));
             Destroy(collision.gameObject);
         }
         if(collision.gameObject.CompareTag("Destroyable")){

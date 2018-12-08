@@ -18,7 +18,9 @@ public class RemoveThreat : MonoBehaviour {
     {
         if (collision.gameObject.CompareTag("Ground"))
         {
-            this.gameObject.tag = "Untagged";
+            this.gameObject.tag = "Ground";
+            this.transform.parent.gameObject.tag = "Ground";
+            GetComponent<AudioSource>().Play();
         }
     }
 }

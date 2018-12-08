@@ -12,6 +12,17 @@ TagManager:
   - Destroyable
   - Trigger
   - platform
+  - Enemy
+  - MovingPlatform
+  - RightGate
+  - WinCondition
+  - Item
+  - Heart
+  - Heart2
+  - Heart3
+  - Heart4
+  - Heart5
+  - InfoText
   layers:
   - Default
   - TransparentFX
